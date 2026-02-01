@@ -20,12 +20,17 @@ header {
     text-align: center;
 }
 
+/* ----------------------- Banner with image ----------------------- */
 .banner {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                url('images/banner.jpg');
+    background-size: cover;
+    background-position: center;
     padding: 2rem;
     margin-bottom: 1.5rem;
     border-radius: 8px;
     color: #fff;
+    text-align: center;
 }
 
 .banner h1 {
