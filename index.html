@@ -1,130 +1,247 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dia's Store - Fashion Clothing</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Dia Clothing Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS goes here - see below */
+    </style>
 </head>
 <body>
+    <!-- Header & Navigation -->
     <header>
-        <div class="banner">
-            <h1>Welcome to Dia's Store</h1>
-            <p>Discover the latest trends in fashion</p>
+        <div class="container">
+            <h1>dia_clothing_store</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#ladies-fashion">Ladies Fashion</a></li>
+                    <li><a href="#bed-sheet">Bed Sheet</a></li>
+                    <li><a href="#comforter">Comforter</a></li>
+                    <li><a href="#ladies-bags">Ladies Bags</a></li>
+                    <li><a href="#sandals">Sandals</a></li>
+                </ul>
+                <div class="cart-btn" onclick="showCart()">
+                    Cart (<span id="cart-count">0</span>)
+                </div>
+            </nav>
         </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
-        </nav>
     </header>
-    <main>
-        <section class="intro">
-            <h2>About Dia's Store</h2>
-            <p>At Dia's Store, we bring you stylish, high-quality clothing for every occasion. From elegant dresses to casual wear and trendy accessories, find your perfect look here.</p>
-        </section>
-        <section class="products">
-            <h2>Featured Products</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=300" alt="Elegant Dress">
-                    <h3>Summer Casual Dress</h3>
-                    <p>$39.99</p>
-                    <select class="size-select">
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                    </select>
-                    <button class="add-to-cart" data-name="Summer Casual Dress" data-price="39.99">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300" alt="Casual Shirt">
-                    <h3>Classic Casual Shirt</h3>
-                    <p>$27.99</p>
-                    <select class="size-select">
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                    </select>
-                    <button class="add-to-cart" data-name="Classic Casual Shirt" data-price="27.99">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300" alt="Summer Dress">
-                    <h3>Floral Summer Dress</h3>
-                    <p>$35.99</p>
-                    <select class="size-select">
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                    </select>
-                    <button class="add-to-cart" data-name="Floral Summer Dress" data-price="35.99">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1506629905607-0b3b5b3b5b3b?w=300" alt="Formal Blouse">
-                    <h3>Elegant Formal Blouse</h3>
-                    <p>$32.99</p>
-                    <select class="size-select">
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                    </select>
-                    <button class="add-to-cart" data-name="Elegant Formal Blouse" data-price="32.99">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=300" alt="Denim Jacket">
-                    <h3>Trendy Denim Jacket</h3>
-                    <p>$55.99</p>
-                    <select class="size-select">
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                    </select>
-                    <button class="add-to-cart" data-name="Trendy Denim Jacket" data-price="55.99">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1582418702059-97ebafb35d09?w=300" alt="Evening Gown">
-                    <h3>Evening Party Gown</h3>
-                    <p>$75.99</p>
-                    <select class="size-select">
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                    </select>
-                    <button class="add-to-cart" data-name="Evening Party Gown" data-price="75.99">Add to Cart</button>
-                </div>
-                <!-- New Products Added -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1602810313737-d4b03c1a0c28?w=300" alt="Summer Hat">
-                    <h3>Stylish Summer Hat</h3>
-                    <p>$19.99</p>
-                    <select class="size-select">
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                    </select>
-                    <button class="add-to-cart" data-name="Stylish Summer Hat" data-price="19.99">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1614289508145-9c967b607f9b?w=300" alt="Leather Bag">
-                    <h3>Elegant Leather Bag</h3>
-                    <p>$49.99</p>
-                    <select class="size-select">
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                    </select>
-                    <button class="add-to-cart" data-name="Elegant Leather Bag" data-price="49.99">Add to Cart</button>
+
+    <!-- Banner Section -->
+    <section id="banner">
+        <div class="banner-overlay">
+            <h2>Welcome to Dia's Store</h2>
+            <p>Discover the latest trends in fashion & home collection</p>
+            <button class="btn" onclick="scrollToProducts()">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section id="carousel">
+        <div class="carousel-container">
+            <div class="slide active">
+                <img src="https://source.unsplash.com/800x400/?summer-fashion" alt="Summer Collection">
+                <div class="slide-content">
+                    <h3>Summer Collection</h3>
+                    <p>Light and breezy outfits for the season</p>
+                    <button class="btn" onclick="scrollToProducts()">Shop Now</button>
                 </div>
             </div>
-        </section>
-    </main>
-    <script src="script.js"></script>
+            <div class="slide">
+                <img src="https://source.unsplash.com/800x400/?sales-offers" alt="Sales Offers">
+                <div class="slide-content">
+                    <h3>Sales Offers</h3>
+                    <p>Up to 50% off on selected items</p>
+                    <button class="btn" onclick="scrollToProducts()">Shop Now</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://source.unsplash.com/800x400/?bed-sheets" alt="Bed Sheet Collection">
+                <div class="slide-content">
+                    <h3>Bed Sheet Collection</h3>
+                    <p>Cozy and stylish bedding for your home</p>
+                    <button class="btn" onclick="scrollToProducts()">Shop Now</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://source.unsplash.com/800x400/?comforters" alt="Comforter Collection">
+                <div class="slide-content">
+                    <h3>Comforter Collection</h3>
+                    <p>Warm and comfortable for all seasons</p>
+                    <button class="btn" onclick="scrollToProducts()">Shop Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-indicators">
+            <span class="indicator active" onclick="goToSlide(0)"></span>
+            <span class="indicator" onclick="goToSlide(1)"></span>
+            <span class="indicator" onclick="goToSlide(2)"></span>
+            <span class="indicator" onclick="goToSlide(3)"></span>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section id="intro">
+        <div class="container">
+            <p>Welcome to Dia's Clothing Store, your go-to destination for elegant ladies fashion and cozy home collection items. From stylish dresses and accessories to luxurious bed sheets and comforters, we offer high-quality products designed to enhance your lifestyle.</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div id="ladies-fashion" class="product-category">
+                <h3>Ladies Fashion</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/300x300/?ladies-dress" alt="Ladies Dress">
+                        <h4>Elegant Dress</h4>
+                        <p>$49.99</p>
+                        <select class="size-selector">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                        <button class="btn add-to-cart" onclick="addToCart('Elegant Dress', 49.99, this.previousElementSibling.value)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/300x300/?ladies-top" alt="Ladies Top">
+                        <h4>Stylish Top</h4>
+                        <p>$29.99</p>
+                        <select class="size-selector">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                        <button class="btn add-to-cart" onclick="addToCart('Stylish Top', 29.99, this.previousElementSibling.value)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div id="bed-sheet" class="product-category">
+                <h3>Bed Sheets</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/300x300/?bed-sheet" alt="Cotton Bed Sheet">
+                        <h4>Cotton Bed Sheet</h4>
+                        <p>$39.99</p>
+                        <button class="btn add-to-cart" onclick="addToCart('Cotton Bed Sheet', 39.99)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/300x300/?silk-bed-sheet" alt="Silk Bed Sheet">
+                        <h4>Silk Bed Sheet</h4>
+                        <p>$59.99</p>
+                        <button class="btn add-to-cart" onclick="addToCart('Silk Bed Sheet', 59.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div id="comforter" class="product-category">
+                <h3>Comforters</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/300x300/?comforter" alt="Down Comforter">
+                        <h4>Down Comforter</h4>
+                        <p>$79.99</p>
+                        <button class="btn add-to-cart" onclick="addToCart('Down Comforter', 79.99)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/300x300/?wool-comforter" alt="Wool Comforter">
+                        <h4>Wool Comforter</h4>
+                        <p>$89.99</p>
+                        <button class="btn add-to-cart" onclick="addToCart('Wool Comforter', 89.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div id="ladies-bags" class="product-category">
+                <h3>Ladies Bags</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/300x300/?ladies-handbag" alt="Leather Handbag">
+                        <h4>Leather Handbag</h4>
+                        <p>$99.99</p>
+                        <button class="btn add-to-cart" onclick="addToCart('Leather Handbag', 99.99)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/300x300/?ladies-tote" alt="Tote Bag">
+                        <h4>Tote Bag</h4>
+                        <p>$49.99</p>
+                        <button class="btn add-to-cart" onclick="addToCart('Tote Bag', 49.99)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div id="sandals" class="product-category">
+                <h3>Sandals</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/300x300/?ladies-sandals" alt="Comfort Sandals">
+                        <h4>Comfort Sandals</h4>
+                        <p>$39.99</p>
+                        <select class="size-selector">
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                        </select>
+                        <button class="btn add-to-cart" onclick="addToCart('Comfort Sandals', 39.99, this.previousElementSibling.value)">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://source.unsplash.com/300x300/?stylish-sandals" alt="Stylish Sandals">
+                        <h4>Stylish Sandals</h4>
+                        <p>$49.99</p>
+                        <select class="size-selector">
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                        </select>
+                        <button class="btn add-to-cart" onclick="addToCart('Stylish Sandals', 49.99, this.previousElementSibling.value)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart" class="hidden">
+        <div class="container">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <p>Total: $<span id="cart-total">0.00</span></p>
+            <button class="btn" onclick="showCheckout()">Proceed to Checkout</button>
+            <button class="btn" onclick="hideCart()">Continue Shopping</button>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section id="checkout" class="hidden">
+        <div class="container">
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="address">Address:</label>
+                <textarea id="address" required></textarea>
+                <label for="payment">Payment Method:</label>
+                <select id="payment">
+                    <option>Credit Card</option>
+                    <option>PayPal</option>
+                    <option>Cash on Delivery</option>
+                </select>
+                <button type="submit" class="btn">Place Order</button>
+            </form>
+            <button class="btn" onclick="hideCheckout()">Back to Cart</button>
+        </div>
+    </section>
+
+    <script>
+        // JS goes here - see below
+    </script>
 </body>
 </html>
